@@ -1,0 +1,52 @@
+<div class="row" style="margin-top: 10px;">
+	<div class="large-12 columns">
+
+		<dl class="accordion" data-accordion="">
+			{{#each items}}
+			  <dd class="accordion-navigation">
+			    <a href="#panel{{this.id}}"><div class="talk-title">{{this.title}}</div>
+			    	<div class="talk-title-details">
+			    		<div class="talk-date"><time datetime="{{this.date}}">{{this.date}}</time></div>
+			    		<strong>by {{this.author.name}}</strong>
+			    	</div>
+			    </a>
+			    <div id="panel{{this.id}}" class="content">
+			    	<figure style="text-align: center;" class="talk-acoder-pic">
+			    		{{#if this.author.picture}}
+			    			<img src="public/images/acoders/{{this.author.picture}}" alt="{{this.author.name}}">
+			    		{{else}}
+			    			<img src="public/images/acoders/default-acoder.jpeg" alt="{{this.author.name}}">
+			    		{{/if}}
+			    		
+			    	</figure>
+
+			    	<div class="talk-description"><p>{{{this.description}}}</p></div>
+
+					<div class="talk-resources">
+						{{#if this.available}}
+							<ul>
+								<li><a href="{{this.links.slide}}">slide deck</a></li>
+								{{#if this.links.youtube}}<li><a href="{{this.links.youtube}}">youtube video</a></li>{{/if}}
+							</ul>
+					
+							<h4>resources</h4>
+					    	<ul>
+					    		{{#each this.links.resources}}
+					    			<li><a href="{{this.link}}">{{this.name}}</a></li>
+					    		{{/each}}
+
+					    	</ul>
+				    	{{else}}
+
+				    		<div data-alert class="alert-box info radius">
+							  We know you are looking forward for this talk, but hold on for a while. We promisse you won't regret!!!
+							</div>
+
+				    	{{/if}}
+			    	</div>
+			    </div>
+			  </dd>
+		  	{{/each}}
+		</dl>
+	</div>
+<div>
