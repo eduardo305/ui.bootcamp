@@ -14,7 +14,7 @@ var collection = [
         description: 'RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.',
         author: {
             name: 'Henrique Filho',
-            picture: ''
+            picture: 'henrique_filho.jpg'
         },
         links: {
             slide: 'http://slid.es/avenuecode/a-javascript-module-loader-require-js',
@@ -129,7 +129,7 @@ var collection = [
         description: 'Bring tests for your front-end with Jasmine',
         author: {
             name: 'Igor Lima',
-            picture: ''
+            picture: 'igor_lima.jpg'
         },
         links: {
             slide: 'https://slid.es/avenuecode/an-overview-about-testing-and-jasmine',
@@ -217,7 +217,7 @@ var collection = [
         description: 'Unit Testing live on front-end',
         author: {
             name: 'Rafael Paiva',
-            picture: ''
+            picture: 'rafael_paiva.jpg'
         },
         links: {
             slide: '',
@@ -285,7 +285,7 @@ var collection = [
         description: 'The Sequelize library provides easy access to MySQL, MariaDB, SQLite or PostgreSQL databases by mapping database entries to objects and vice versa. To put it in a nutshell, it\'s an ORM (Object-Relational-Mapper). The library is written entirely in JavaScript and can be used in the Node.JS environment.',
         author: {
             name: 'Thiago Bonfim',
-            picture: ''
+            picture: 'thiago_bonfim.jpg'
         },
         links: {
             slide: '',
@@ -317,7 +317,10 @@ app.set('view engine', 'hbs');
 
 app.get('/', function(req, res) {
     res.render('index', {
-        items: collection.reverse()
+        items: function() {
+
+            return collection[0].id === 1 ? collection.reverse() : collection; 
+        }
     });
 });
 

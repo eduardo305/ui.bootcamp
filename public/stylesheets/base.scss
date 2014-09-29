@@ -1,5 +1,5 @@
 header {
-	background-color: #F55B2D;
+	background-color: #1fa67a;
 	padding: 10px;
 }
 
@@ -10,8 +10,22 @@ header {
 	line-height: 20px;
 }
 
-.talk-acoder-pic img {
-	width: 70px;
+.bp-page-title {
+	font-size: 33px;
+	letter-spacing: -2px;
+	line-height: 1;
+	text-shadow: 4px 3px 0px #1d9d74, 5px 5px 3px rgba(0, 0, 0, 0.15);
+	margin: 0 0 15px;
+	color: white;
+}
+
+.bp-acoder-pic {
+	
+	margin: 10px;
+}
+
+.bp-acoder-pic img {
+	width: 60px;
 
 }
 
@@ -19,12 +33,20 @@ header {
 	width: 50px;
 }
 
-.talk-title {
+.bp-title {
 	font-weight: bold;
 }
 
-.talk-title-details {
+.bp-title-details {
 	font-size: 0.8em;
+}
+
+.bp-round {
+	border-radius: 10px;
+}
+
+.accordion-navigation .columns {
+	padding: 10px;
 }
 
 

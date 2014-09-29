@@ -4,25 +4,34 @@
 		<dl class="accordion" data-accordion="">
 			{{#each items}}
 			  <dd class="accordion-navigation">
-			    <a href="#panel{{this.id}}"><div class="talk-title">{{this.title}}</div>
-			    	<div class="talk-title-details">
-			    		<div class="talk-date"><time datetime="{{this.date}}">{{this.date}}</time></div>
-			    		<strong>by {{this.author.name}}</strong>
+			    <a href="#panel{{this.id}}">
+			    	<div class="row">
+			    	<div class="small-4 medium-2 large-1 columns">
+				    	<figure class="bp-acoder-pic text-center">
+				    		{{#if this.author.picture}}
+				    			<img src="public/images/acoders/{{this.author.picture}}" alt="{{this.author.name}}" class="bp-round">
+				    		{{else}}
+				    			<img src="public/images/acoders/default-acoder.jpeg" alt="{{this.author.name}}">
+				    		{{/if}}
+				    		
+				    	</figure>
+			    	</div>
+			    	<div class="small-8 medium-10 large-11 columns">
+				    	<div class="bp-title">{{this.title}}</div>
+
+				    	<div class="bp-title-details">
+				    		<div class="bp-date"><time datetime="{{this.date}}">{{this.date}}</time></div>
+				    		<strong>by {{this.author.name}}</strong>
+				    	</div>
+			    	</div>
 			    	</div>
 			    </a>
 			    <div id="panel{{this.id}}" class="content">
-			    	<figure style="text-align: center;" class="talk-acoder-pic">
-			    		{{#if this.author.picture}}
-			    			<img src="public/images/acoders/{{this.author.picture}}" alt="{{this.author.name}}">
-			    		{{else}}
-			    			<img src="public/images/acoders/default-acoder.jpeg" alt="{{this.author.name}}">
-			    		{{/if}}
-			    		
-			    	</figure>
+			    	
 
-			    	<div class="talk-description"><p>{{{this.description}}}</p></div>
+			    	<div class="bp-description"><p>{{{this.description}}}</p></div>
 
-					<div class="talk-resources">
+					<div class="bp-resources">
 						{{#if this.available}}
 							<ul>
 								<li><a href="{{this.links.slide}}">slide deck</a></li>
